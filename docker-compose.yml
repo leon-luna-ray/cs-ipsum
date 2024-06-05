@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  mywebapi:
+    image: cs-ipsum
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
