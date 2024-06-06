@@ -5,6 +5,9 @@ WORKDIR /source
 # Copy the project files and restore dependencies
 COPY . .
 
+# List files to debug directory structure
+RUN ls -R
+
 # Specify the solution file for dotnet restore
 RUN dotnet restore code.sln
 
