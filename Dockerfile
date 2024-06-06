@@ -1,17 +1,24 @@
+# Stage 1: Build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
+# Copy the project files and restore dependencies
 COPY . .
 
-RUN dotnet restore cs-ipsum.ddl
+# Specify the solution file for dotnet restore
+RUN dotnet restore code.sln
 
-RUN dotnet publish cs-ipsum.ddl -c Release -o /app/publish
+# Build and publish the application
+RUN dotnet publish code.sln -c Release -o /app/publish
 
+# Stage 2: Create the runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
+# Copy the published files from the build stage
 COPY --from=build /app/publish .
 
+# Set environment variables and expose the port
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
