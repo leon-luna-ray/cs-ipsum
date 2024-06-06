@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY ./bin/Release/net8.0/publish/ .
 
-ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:80
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "cs-ipsum.dll"]
