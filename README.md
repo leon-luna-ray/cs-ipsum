@@ -1,7 +1,11 @@
 # CS Ipsum
 
+REST API for generating Lorem Ipsum text built with C# and Dotnet.
+
+[csipsum.azurewebsites.net/ipsum](csipsum.azurewebsites.net/ipsum)
+
 ## Technologies
-- ASP.NET
 - C#
-- Docker
+- ASP.NET
 - Azure
+- Docker
