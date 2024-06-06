@@ -6,7 +6,7 @@ WORKDIR /source
 COPY . .
 
 # List files to debug directory structure
-RUN ls -R
+RUN ls -R /source
 
 # Specify the solution file for dotnet restore
 RUN dotnet restore code.sln
